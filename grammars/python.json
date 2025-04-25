@@ -1,0 +1,161 @@
+{
+    "name": "Python",
+    "version": "1.0.0",
+    "fileTypes": [
+        "py"
+    ],
+    "scopeName": "source.python",
+    "foldingStartMarker": "^\\s*def |^\\s*class |\\{",
+    "foldingStopMarker": "^\\s*$|\\}",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#classes"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#punctuation"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.python",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.python",
+                    "match": "\\b(if|else|elif|for|while|break|continue|return|in|is|and|or|not|with|as|pass|yield|try|except|finally|raise|assert|from|import|global|nonlocal|lambda|del|async|await)\\b"
+                },
+                {
+                    "name": "keyword.declaration.python",
+                    "match": "\\b(class|def)\\b"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.python",
+                    "match": "\\b(None|True|False)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.python",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.python",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.double.python",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.python",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.triple.python",
+                    "begin": "'''",
+                    "end": "'''",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.python",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.triple.python",
+                    "begin": "\"\"\"",
+                    "end": "\"\"\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.python",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.python",
+                    "match": "\\b(0[xX][0-9a-fA-F]+|[0-9]+(\\.[0-9]*)?(e[+-]?[0-9]+)?)\\b"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.python",
+                    "match": "(?<=def )\\w+"
+                }
+            ]
+        },
+        "classes": {
+            "patterns": [
+                {
+                    "name": "entity.name.class.python",
+                    "match": "(?<=class )\\w+"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.python",
+                    "match": "\\+|\\-|\\*|\\/|%|=|==|!=|<=|>=|<|>|\\*\\*|\\+=|\\-=|\\*=|\\/=|%=|&|\\||\\^|~|<<|>>"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.separator.python",
+                    "match": ",|:|\\.|;"
+                },
+                {
+                    "name": "punctuation.brackets.python",
+                    "match": "[(){}\\[\\]]"
+                }
+            ]
+        }
+    }
+}
